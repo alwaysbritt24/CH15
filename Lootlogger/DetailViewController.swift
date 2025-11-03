@@ -7,9 +7,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
-    @IBOutlet var nameField: UITextField!
+class DetailViewController: UIViewController, UITextFieldDelegate {
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @IBOutlet
+    var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
@@ -31,12 +35,36 @@ class DetailViewController: UIViewController {
         return formatter
     }()
 
-      override func viewWillAppear(_ animated: Bool) {
-          super.viewWillAppear(animated)
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
 
-          nameField.text = item.name
-          serialNumberField.text = item.serialNumber
-          valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
-          dateLabel.text = dateFormatter.string(from: item.dateCreated)
-      }
+            nameField.text = item.name
+            serialNumberField.text = item.serialNumber
+            valueField.text =
+                    numberFormatter.string(from: NSNumber(value: item.valueInDollars))
+                dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        view.endEditing(true)
+        
+        // "Save" changes to item
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialNumberField.text
+
+        if let valueText = valueField.text,
+            let value = numberFormatter.number(from: valueText) {
+            item.valueInDollars = value.intValue
+        } else {
+            item.valueInDollars = 0
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
