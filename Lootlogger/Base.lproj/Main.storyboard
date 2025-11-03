@@ -87,6 +87,7 @@
                                     <outlet property="nameLabel" destination="E7r-Ev-kMQ" id="QoW-vX-2zo"/>
                                     <outlet property="serialNumberLabel" destination="dIg-X7-RJZ" id="zZf-H3-J2C"/>
                                     <outlet property="valueLabel" destination="fmN-8f-Jh3" id="b7y-Cn-yVy"/>
+                                    <segue destination="dY3-n6-wxd" kind="show" identifier="showItem" id="i7V-U4-Efj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -100,16 +101,16 @@
             </objects>
             <point key="canvasLocation" x="-364" y="107"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="stF-Jv-ywe">
             <objects>
-                <viewController id="dY3-n6-wxd" sceneMemberID="viewController">
+                <viewController id="dY3-n6-wxd" customClass="DetailViewController" customModule="Lootlogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jhg-ku-QZT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-rR-vJP">
-                                <rect key="frame" x="16" y="126" width="361" height="650"/>
+                                <rect key="frame" x="16" y="67" width="361" height="718"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-4x-SbZ">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
@@ -160,7 +161,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Labeled " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drs-MY-eQY">
-                                        <rect key="frame" x="0.0" y="126" width="361" height="524"/>
+                                        <rect key="frame" x="0.0" y="126" width="361" height="592"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -181,6 +182,13 @@
                             <constraint firstItem="m5a-rR-vJP" firstAttribute="top" secondItem="1ir-f9-qqd" secondAttribute="top" constant="8" id="yHE-26-UKK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X84-jx-2fX"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="Drs-MY-eQY" id="jyD-mg-8d2"/>
+                        <outlet property="nameField" destination="m5a-rR-vJP" id="Qr0-zW-ZIr"/>
+                        <outlet property="serialNumberField" destination="rN2-EF-Okg" id="zgg-P8-Hvl"/>
+                        <outlet property="valueField" destination="lrn-pV-Xfv" id="xA7-Qa-E4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8h-M6-jo8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
