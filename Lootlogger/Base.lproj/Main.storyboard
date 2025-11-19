@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-rR-vJP">
-                                <rect key="frame" x="16" y="180" width="361" height="596"/>
+                                <rect key="frame" x="16" y="180" width="361" height="548"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-4x-SbZ">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
@@ -177,7 +177,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Labeled " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drs-MY-eQY">
-                                        <rect key="frame" x="0.0" y="126" width="361" height="470"/>
+                                        <rect key="frame" x="0.0" y="126" width="361" height="422"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -188,13 +188,26 @@
                                     <constraint firstItem="sId-tZ-uOB" firstAttribute="leading" secondItem="er5-Ha-7CA" secondAttribute="leading" id="8Zq-65-xWD"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-Cm-4F0">
+                                <rect key="frame" x="0.0" y="736" width="393" height="48"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="EMv-iI-5Pg">
+                                        <connections>
+                                            <action selector="choosePhotoSource:" destination="dY3-n6-wxd" id="TJw-zE-9Ay"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ir-f9-qqd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="1ir-f9-qqd" firstAttribute="bottom" secondItem="m5a-rR-vJP" secondAttribute="bottom" constant="8" id="NRi-CY-Ulq"/>
+                            <constraint firstItem="6mE-Cm-4F0" firstAttribute="leading" secondItem="Jhg-ku-QZT" secondAttribute="leading" id="VWn-SB-7Ah"/>
+                            <constraint firstItem="1ir-f9-qqd" firstAttribute="bottom" secondItem="6mE-Cm-4F0" secondAttribute="bottom" id="eA8-gy-2Et"/>
                             <constraint firstItem="1ir-f9-qqd" firstAttribute="trailing" secondItem="m5a-rR-vJP" secondAttribute="trailing" constant="16" id="eZY-Xv-EzK"/>
+                            <constraint firstAttribute="trailing" secondItem="6mE-Cm-4F0" secondAttribute="trailing" id="gn2-Db-nA0"/>
+                            <constraint firstItem="6mE-Cm-4F0" firstAttribute="top" secondItem="m5a-rR-vJP" secondAttribute="bottom" constant="8" id="qao-TF-XZm"/>
                             <constraint firstItem="m5a-rR-vJP" firstAttribute="leading" secondItem="1ir-f9-qqd" secondAttribute="leading" constant="16" id="xLb-D3-8Pf"/>
                             <constraint firstItem="m5a-rR-vJP" firstAttribute="top" secondItem="1ir-f9-qqd" secondAttribute="top" constant="8" id="yHE-26-UKK"/>
                         </constraints>
@@ -240,7 +253,7 @@
     </scenes>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
