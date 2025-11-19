@@ -177,11 +177,14 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Labeled " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drs-MY-eQY">
-                                        <rect key="frame" x="0.0" y="126" width="361" height="422"/>
+                                        <rect key="frame" x="0.0" y="125.99999999999999" width="361" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Us-BLa">
+                                        <rect key="frame" x="0.0" y="154.33333333333329" width="361" height="393.66666666666674"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="er5-Ha-7CA" firstAttribute="leading" secondItem="lrn-pV-Xfv" secondAttribute="leading" id="04p-Gs-eKn"/>
@@ -218,6 +221,7 @@
                     <navigationItem key="navigationItem" id="X84-jx-2fX"/>
                     <connections>
                         <outlet property="dateLabel" destination="Drs-MY-eQY" id="Vae-Cy-6wt"/>
+                        <outlet property="imageView" destination="Vh8-Us-BLa" id="Ead-HE-NfQ"/>
                         <outlet property="nameField" destination="sId-tZ-uOB" id="mQ2-UU-aRO"/>
                         <outlet property="serialNumberField" destination="er5-Ha-7CA" id="Y7i-Wc-XnT"/>
                         <outlet property="valueField" destination="lrn-pV-Xfv" id="Xoh-g7-Vpr"/>
